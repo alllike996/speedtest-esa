@@ -14,7 +14,23 @@
 本次更新在保持 **“单文件、零依赖”** 的核心理念下，通过 **Base64 编码** 实现了图标的完全内置支持。
 
 ---
+⚙️ 自定义图标设置
 
+如果你想替换默认图标，请按照以下步骤操作：
+
+    将你的图片（推荐 32x32 PNG）转换为 Base64 编码。
+
+    关键步骤：删除编码结果中的 data:image/png;base64, 前缀。
+
+    替换代码第 16 行左右的 ICON_DATA 变量：
+   
+// ❌ 错误示范 (带前缀)
+const ICON_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...";
+
+// ✅ 正确示范 (无前缀)
+const ICON_DATA = "iVBORw0KGgoAAAANSUhEUgAA...";
+
+  
 ## 🔄 版本对比
 
 | 特性 | v1.1（旧版本） | v1.2（当前版本） |
